@@ -14,14 +14,10 @@ public class Main {
         listFlowers.add(new Flower("RedRose", 5000, "freshflower"));
         listFlowers.add(new Flower("SunFlower", 15000, "freshflower"));
        
-         // menampilkan informasi 
-         for (Flower list : listFlowers) {
-            list.tampilkanInfoDanHargaDiskon(10);
-         
-        }
 
-         // menampilkan daftar bunga sebelum sorting
-         System.out.println("\nDaftar Bunga Sebelum Sorting:");
+         // menampilkan daftar bunga 
+         System.out.println("\n---------------------------------------");
+         System.out.println("        INFORMASII DAFTAR BUNGA        ");
          System.out.println("---------------------------------------");
          System.out.printf("%-20s | %10s%n", "Nama Bunga", "Harga");
          System.out.println("---------------------------------------");
@@ -64,6 +60,14 @@ public class Main {
             System.out.println("---------------------------------------");
         }
 
+        // menampilkan informasi 
+        for (Flower list : listFlowers) {
+            list.tampilkanInfoDanHargaDiskon(10);
+         
         }
+
+        }
+    
     }
+
 
