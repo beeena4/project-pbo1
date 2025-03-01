@@ -12,12 +12,17 @@ public class Main {
         // menambahkan objek bunga ke dalam ArrayList
         listFlowers.add(new Flower("CallaLily", 10000, "freshflower"));
         listFlowers.add(new Flower("RedRose", 5000, "freshflower"));
-        listFlowers.add(new Flower("SunFlower", 15000, "freshflower"));
+        listFlowers.add(new Flower("SunFlower", 10000, "freshflower"));
+        listFlowers.add(new Flower("Orchid", 15000, "freshflower"));
+        listFlowers.add(new Flower("Aster", 5000, "freshflower"));
+        listFlowers.add(new Flower("Lily", 20000, "freshflower"));
        
         while (true) {
+        // menampilkan menu utama
             System.out.println("\n=======================================");
             System.out.println(">>            BEE FLORIST            <<");
             System.out.println("=======================================");
+            System.out.println("Selamat datang di BEE FLORIST !!");
             System.out.println("1. Tampilkan Daftar Bunga");
             System.out.println("2. Tampilkan Bunga Berdasarkan Harga");
             System.out.println("3. Cari Bunga Berdasarkan Nama");
@@ -56,7 +61,7 @@ public class Main {
                 break;
 
             case 3:
-                // Pencarian bunga berdasarkan nama
+                // menu pencarian bunga berdasarkan nama
                 System.out.println("\nMasukkan nama bunga yang ingin dicari: ");
                 String searchName = scanner.nextLine();
                 boolean found = false;
@@ -81,23 +86,30 @@ public class Main {
             break;
 
             case 4:
-            System.out.print("\nMasukkan nama bunga   : ");
+                // proses pemesanan bunga
+                boolean beliLagi;
+                do {
+                    System.out.print("\nMasukkan nama bunga   : ");
                     String orderName = scanner.nextLine();
                     System.out.print("Masukkan jumlah bunga : ");
                     int jumlah = scanner.nextInt();
                     scanner.nextLine();
+
                     boolean ordered = false;
                     for (Flower m : listFlowers) {
                         if (m.getNama().equalsIgnoreCase(orderName)) {
                             double totalHarga = m.getHarga() * jumlah;
                             double diskon = 0;
+
+                            // menentukan diskon berdasarkan jumlah pembelian
                             if (jumlah > 10) {
-                                diskon = 0.20 * totalHarga; // Diskon 20%
+                                diskon = 0.20 * totalHarga; // Diskon 20% apabila membeli lebih dari 10
                             } else if (jumlah > 5) {
-                                diskon = 0.10 * totalHarga; // Diskon 10%
+                                diskon = 0.10 * totalHarga; // Diskon 10% apabila membeli lebih dari 5
                             }
                             double totalPembayaran = totalHarga - diskon;
 
+                            // menampilkan informasi pesanan
                             System.out.println("\nPesanan berhasil!");
                             System.out.println("=======================================");
                             System.out.println(">>         INFORMASI  PESANAN        <<");
@@ -112,15 +124,38 @@ public class Main {
                             break;
                 }
             }
+
             if (!ordered) {
                 System.out.println("\n---------------------------------------");
                 System.out.println("[ERROR] | Bunga tidak ditemukan!!.");
                 System.out.println("---------------------------------------");
             }
-            break;
 
+            // konfirmasi apakah pengguna ingin beli lagi
+            System.out.print("\nApakah ingin membeli lagi? (Y/N): ");
+            String pilihanLagi;
+            while (true) {
+                pilihanLagi = scanner.nextLine().trim().toUpperCase();
+                if (pilihanLagi.equals("Y") || pilihanLagi.equals("N")) {
+                    break;
+                } else {
+                    System.out.print("Input tidak valid! Masukkan Y atau N: ");
+                }
+            }
+            beliLagi = pilihanLagi.equals("Y");
+            } while (beliLagi);
 
-            case 5:
+            System.out.println("Terima kasih telah berbelanja di");
+            System.out.println("BEE FLORIST !!");
+
+            System.out.println("\n---------------------------------------");
+            System.out.println(">>         by : FEBRIANA_OO6         <<");
+            System.out.println("---------------------------------------");
+            scanner.close();
+            return;
+
+                case 5:
+                // keluar dari program
                 System.out.println("Terima kasih!.");
                 System.out.println("\n---------------------------------------");
                 System.out.println(">>         by : FEBRIANA_OO6         <<");
