@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 class Flower {
+    private String namaPembeli;
     private String nama;
     private double harga;
     private String kategori;
@@ -12,6 +13,14 @@ class Flower {
     }
 
     // getter dan setter
+    public String getNamaPembeli() {
+        return namaPembeli;
+    }
+
+    public void setNamaPembeli(String namaPembeli) {
+        this.namaPembeli = namaPembeli;
+    }
+
     public String getNama() {
         return nama;
     }

@@ -6,6 +6,17 @@ public class Main {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("\n=======================================");
+        System.out.println(">>            BEE FLORIST            <<");
+        System.out.println("=======================================");
+        
+        // Input nama pembeli
+        System.out.print("Nama : ");
+        String namaPembeli = scanner.nextLine();
+        System.out.println("\nSelamat datang di BEE FLORIST, " + namaPembeli + "!");
+        System.out.println("Kami memiliki berbagai pilihan bunga");
+        System.out.println("untuk setiap moment spesial ;)");
+
         // membuat ArrayList untuk menyimpan objek bunga
         ArrayList<Flower> listFlowers = new ArrayList<>();
 
@@ -20,9 +31,8 @@ public class Main {
         while (true) {
         // menampilkan menu utama
             System.out.println("\n=======================================");
-            System.out.println(">>            BEE FLORIST            <<");
+            System.out.println(">>              M E N U              <<");
             System.out.println("=======================================");
-            System.out.println("Selamat datang di BEE FLORIST !!");
             System.out.println("1. Tampilkan Daftar Bunga");
             System.out.println("2. Tampilkan Bunga Berdasarkan Harga");
             System.out.println("3. Cari Bunga Berdasarkan Nama");
