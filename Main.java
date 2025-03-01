@@ -13,7 +13,7 @@ public class Main {
         // Input nama pembeli
         System.out.print("Nama : ");
         String namaPembeli = scanner.nextLine();
-        System.out.println("\nSelamat datang di BEE FLORIST, " + namaPembeli + "!");
+        System.out.println("\nSelamat datang di BEE FLORIST," + namaPembeli + "!");
         System.out.println("Kami memiliki berbagai pilihan bunga");
         System.out.println("untuk setiap moment spesial ;)");
 
@@ -166,7 +166,7 @@ public class Main {
 
                 case 5:
                 // keluar dari program
-                System.out.println("Terima kasih!.");
+                System.out.println("Terima kasih telah berkunjung!.");
                 System.out.println("\n---------------------------------------");
                 System.out.println(">>         by : FEBRIANA_OO6         <<");
                 System.out.println("---------------------------------------");
