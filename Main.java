@@ -48,12 +48,7 @@ public class Main {
 
                     case 5:
                         // keluar dari program
-                        System.out.println("Terima kasih telah berkunjung!.");
-                        System.out.println("\n---------------------------------------");
-                        System.out.println(">>         by : FEBRIANA_OO6         <<");
-                        System.out.println("---------------------------------------");
-                        scanner.close();
-                        return;
+                        displayFooter(scanner);
 
                     default:
                         System.out.println("Pilihan tidak valid, silakan coba lagi.");
