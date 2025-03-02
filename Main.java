@@ -130,39 +130,63 @@ public class Main {
                             System.out.printf("Diskon                : Rp %,10.2f%n", diskon);
                             System.out.printf("Total Pembayaran      : Rp %,10.2f%n", totalPembayaran);
                             System.out.println("---------------------------------------");
+                            
+                            // Memasukkan pembayaran dari pelanggan
+                            double pembayaran;
+                            while (true) {
+                            System.out.print("TUNAI                 : Rp ");
+                            pembayaran = scanner.nextDouble();
+                            scanner.nextLine(); 
+
+                            if (pembayaran >= totalPembayaran) {
+                                break;
+                            } else {
+                                double kekurangan = pembayaran - totalPembayaran;
+                                System.out.println("---------------------------------------");
+                                System.out.println("\n[ERROR] | Uang tidak cukup!!. ");
+                                System.out.printf("KEKURANGAN            : Rp %,10.2f%n", kekurangan);
+                                System.out.println("\n---------------------------------------");
+  
+                        }
+                    }
+                            // Menghitung jumlah kembalian
+                            double kembalian = pembayaran - totalPembayaran;
+                            System.out.printf("KEMBALIAN             : Rp %,10.2f%n", kembalian);
+                            System.out.println("---------------------------------------");
+  
                             ordered = true;
                             break;
                 }
             }
 
-            if (!ordered) {
-                System.out.println("\n---------------------------------------");
-                System.out.println("[ERROR] | Bunga tidak ditemukan!!.");
-                System.out.println("---------------------------------------");
-            }
+                            if (!ordered) {
+                            System.out.println("\n---------------------------------------");
+                            System.out.println("[ERROR] | Bunga tidak ditemukan!!.");
+                            System.out.println("---------------------------------------");
+                        }
 
-            // konfirmasi apakah pengguna ingin beli lagi
-            System.out.print("\nApakah ingin membeli lagi? (Y/N): ");
-            String pilihanLagi;
-            while (true) {
-                pilihanLagi = scanner.nextLine().trim().toUpperCase();
-                if (pilihanLagi.equals("Y") || pilihanLagi.equals("N")) {
-                    break;
-                } else {
-                    System.out.print("Input tidak valid! Masukkan Y atau N: ");
+                            // konfirmasi apakah pengguna ingin beli lagi
+                            System.out.print("\nApakah ingin membeli lagi? (Y/N): ");
+                            String pilihanLagi;
+                            while (true) {
+                                pilihanLagi = scanner.nextLine().trim().toUpperCase();
+                                    if (pilihanLagi.equals("Y") || pilihanLagi.equals("N")) {
+                                    break;
+                                    } else {
+                                    System.out.print("Input tidak valid! Masukkan Y atau N: ");
                 }
             }
-            beliLagi = pilihanLagi.equals("Y");
-            } while (beliLagi);
+                            beliLagi = pilihanLagi.equals("Y");
+                            } while (beliLagi);
 
-            System.out.println("Terima kasih telah berbelanja di");
-            System.out.println("BEE FLORIST !!");
+                            System.out.println("Terima kasih telah berbelanja di");
+                            System.out.println("BEE FLORIST !!");
 
-            System.out.println("\n---------------------------------------");
-            System.out.println(">>         by : FEBRIANA_OO6         <<");
-            System.out.println("---------------------------------------");
-            scanner.close();
-            return;
+                            System.out.println("\n---------------------------------------");
+                            System.out.println(">>         by : FEBRIANA_OO6         <<");
+                            System.out.println("---------------------------------------");
+                            scanner.close();
+                            return;
 
                 case 5:
                 // keluar dari program
